@@ -1,0 +1,107 @@
+<html>
+	<head>
+		<title>Create A Quiz!</title>
+		<link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
+		<link href="../css/bootstrap.css.map" rel="stylesheet" type="text/css" media="all"/>
+		<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all"/>
+		<link href="../css/bootstrap.min.css.map" rel="stylesheet" type="text/css" media="all"/>
+		<link href="../css/bootstrap-theme.css" rel="stylesheet" type="text/css" media="all"/>
+		<link href="../css/bootstrap-theme.css.map" rel="stylesheet" type="text/css" media="all"/>
+		<link href="../css/bootstrap-theme.min.css.map" rel="stylesheet" type="text/css" media="all"/>
+		<link href="../css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" media="all"/>
+		<script type="text/javascript" src="quiz.js"></script>
+		<style type="text/css">
+			@font-face {
+				font-family: myFirstFont;
+				src:url(Sansation/sansation_bold.woff);
+			}
+
+			div {
+				font-family: myFirstFont;
+			}
+
+			body{
+				width: auto;
+			}
+
+			#header{
+				width:95%;
+				height:90px;
+				background-color: blue;
+				color:white;
+				margin:10px;
+				margin-left: 30px;
+				text-align: center;
+				font-size: large;
+				padding:15px;
+			}
+
+			#mytimer{
+				width:95%;
+				height:50px;
+				margin: 15px;
+				margin-left: 30px;
+				text-align: center;
+
+			}
+			#container{
+				width:95%;
+				height: 50%;
+				margin-left: 30px;
+				border-style: dotted;
+			}
+
+			#sidebar{
+				width:30%;
+				margin: 20px;
+				float: left;
+			}
+
+			#main{
+				width: 65%;
+				height: 300px;
+				margin: 10px;
+				text-align: center;
+			}
+
+			#footer{
+				width:95%;
+				height:50px;
+				background-color: blue;
+				color:white;
+				margin: 10px;
+				margin-left: 30px;
+				text-align: center;
+				font-size: large;
+				padding:10px;
+				float:absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="header"><h2 class="h2">Welcome To Quiz Night!</h2></div>
+		<div id="mytimer"><label id="timer">00:00:45</label>
+			<br/>
+			<button class="btn btn-danger" onclick="resetTimer()" name="reset" value="reset">Reset Timer</button>
+			<audio controls hidden id="buzzer">
+				<source src="buzzer.mp3" type="audio/mpeg">
+			</audio>
+		</div>
+		<div id="container">
+			<div id="sidebar">
+				<label >Pick A Number (0 - 19): </label><br/>
+				<input class="form-control" type="number" id="questionNumber" placeholder="Pick a Number Between 0-19" />
+				<br/>
+				<button class="btn btn-success" onclick="selectQuestion()" name="go" value="Go">Go</button><br/><br/><br/>
+
+				<label id="numberPicked"> Numbers Picked:</label>
+			</div>
+			<div id="main" style="float: left"><br/><label id="questionBox" style="font-size: xx-large;"></label><br/><br/>
+				<button class="btn btn-info" onclick="showAnswer()" name="showAnswer">Show Answer</button><br/><br/><br/>
+				<label id="answerBox"></label>
+			</div>
+		</div>
+		<div id="footer"><h4>@anoms09</h4></div>
+	</body>
+
+</html>
